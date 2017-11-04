@@ -39,8 +39,9 @@
   	<!-- /Yandex.Metrika counter -->
   </head>
   <body>
+    <h4><u>Для работы ситезатора голоса, необходимо использовать праузер Google Chrome настольной версии.</u></h4>
     <h1>Правила чтения англиского языка</h1>
-    <p>Измените голос и язык, используя раскрывающееся меню. Озвучивание последнено написанного слова происходит после пробела. Озвучивание предложение полсе нажатия: ".", "!" или "?".</p>
+    <p>Измените голос и язык, используя раскрывающееся меню. Озвучивание последнено написанного слова происходит после пробела. Озвучивание предложение после нажатия: ".", "!" или "?".</p>
     <div>
       <select></select>
     </div>
@@ -52,12 +53,15 @@
       <label class="pitch-value">1</label>
       <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
     </div>
-    <section id="lessons">Lessons</section>
+  </br>
+    <section id="lessons"><b><i>Каждый блок ввода текста следует заканчивать "." для того чтобы при дальнейших прочтениях блока не прочитывался предыдущий блок.</i></b></section>
 
     <script src="data/rulesOfRead.js"></script>
+    <script src="data/consonantLetters.js"></script>
     <script type="text/javascript">
-      let contentStr = JSON.stringify(rulesOfRead, "", 2);
-      let contentObj = JSON.parse(contentStr);
+      // let contentStr = JSON.stringify(rulesOfRead, "", 2);
+      // let contentObj = JSON.parse(contentStr);
+      const section = document.getElementById("lessons");
 
       function createElement(el, contain){
         let elType = document.createElement(el);
@@ -65,12 +69,22 @@
         return elType;
       }
 
+      function createRuleOfConsonants(letter){
+        section.appendChild(createElement("p", `Правило чтения буквы "${letter.toUpperCase()}" - звучит как русский звук [${consonantLetters[letter]}]. Напечатайте по несколько раз букву для прослушивания её алфавитного произношение, как ориентира для запоминания.`));
+        section.appendChild(createElement("textarea", ''));
+      }
+      section.appendChild(createElement("h3", `Правило чтения согласных букв английского языка.`));
+      Object.keys(consonantLetters).forEach(el => createRuleOfConsonants(el));
+
       function createUnit(element, contain){
-        let section = document.getElementById("lessons");
         section.appendChild(createElement("h3", `Правило чтения буквы "${contain.char.toUpperCase()}".`));
+        if(contain.intro) {
+          section.appendChild(createElement("p", `${contain.intro}`));
+        }
+
         for (let rule of contain.def){
-          section.appendChild(createElement("p", `"${contain.char.toUpperCase()}" - звучит ${rule.rule}`));
-          section.appendChild(createElement("b", `${rule.exam}.`));
+          section.appendChild(createElement("p", `"${contain.char.toUpperCase()}" - ${rule.rule}`));
+          section.appendChild(createElement("b", `${rule.exam}`));
           section.appendChild(createElement("textarea", ''));
           if (rule.exce){
             section.appendChild(createElement("b", `Исключения: ${rule.exce}.`));
@@ -79,8 +93,7 @@
         }
       }
 
-      createUnit("", contentObj.c);
-      createUnit("", contentObj.g);
+      Object.values(rulesOfRead).forEach(el => createUnit("", el));
 
     </script>
     <script src="js/script.js"></script>

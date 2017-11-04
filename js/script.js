@@ -58,7 +58,7 @@ window.addEventListener("keydown", function (event) {
   // const inputText = document.getElementById("text_id").value;
   switch (event.keyCode) {
     case 9: // tab
-    case 32: //key space
+    case 32: // key space
     case 49: // key "!"
     case 190: // key "."
     case 191: // key "?"
@@ -92,7 +92,9 @@ window.addEventListener("keydown", function (event) {
     case 190: // key "."
     case 191: // key "?"
       synthVoice(inputLastWord); //read last word.
-      synthVoice(inpuntLastSentence); //read last word.
+      if (inputLastWord[0] !== inpuntLastSentence[0]){ // проверка предложения в одно слово. Чтобы не читать два раза. Но не работает.
+        synthVoice(inpuntLastSentence); //read last word.
+      }
     break;
     default:
       return; // Quit when this doesn't handle the key event.
