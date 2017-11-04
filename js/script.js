@@ -86,7 +86,8 @@ window.addEventListener("keydown", function (event) {
     case 190: // key "."
     case 191: // key "?"
       synthVoice(inputLastWord); //read last word.
-      if (inputLastWord[0] !== inpuntLastSentence[0]){ // проверка предложения в одно слово. Чтобы не читать два раза. Но не работает.
+      if ((inputLastWord[0] !== inpuntLastSentence[0]) &&
+          (inputLastWord[0].length + 1 < inpuntLastSentence[0].length)){ // предложение в одно слово не читать.
         synthVoice(inpuntLastSentence); //read last word.
       }
     break;

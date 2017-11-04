@@ -9,91 +9,49 @@
     </style>
     <title>Rules of Read of English</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <!-- Yandex.Metrika counter -->
-  	<script type="text/javascript">
-  	    (function (d, w, c) {
-  	        (w[c] = w[c] || []).push(function() {
-  	            try {
-  	                w.yaCounter44071744 = new Ya.Metrika({
-  	                    id:44071744,
-  	                    clickmap:true,
-  	                    trackLinks:true,
-  	                    accurateTrackBounce:true
-  	                });
-  	            } catch(e) { }
-  	        });
-
-  	        var n = d.getElementsByTagName("script")[0],
-  	            s = d.createElement("script"),
-  	            f = function () { n.parentNode.insertBefore(s, n); };
-  	        s.type = "text/javascript";
-  	        s.async = true;
-  	        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-  	        if (w.opera == "[object Opera]") {
-  	            d.addEventListener("DOMContentLoaded", f, false);
-  	        } else { f(); }
-  	    })(document, window, "yandex_metrika_callbacks");
-  	</script>
-  	<noscript><div><img src="https://mc.yandex.ru/watch/44071744" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  	<!-- /Yandex.Metrika counter -->
+    <link rel="stylesheet" href="css/styleTab.css">
+    <script src="js/scriptYandexMetrika.js"></script>
+    <script src="js/scriptTab.js"></script>
   </head>
   <body>
-    <h4><u>Для работы ситезатора голоса, необходимо использовать праузер Google Chrome настольной версии.</u></h4>
-    <h1>Правила чтения англиского языка</h1>
-    <p>Измените голос и язык, используя раскрывающееся меню. Озвучивание последнено написанного слова происходит после пробела. Озвучивание предложение после нажатия: ".", "!" или "?".</p>
-    <div>
-      <select></select>
-    </div>
-    <div>
-      <label for="rate">Скорость речи - Speed speach: </label>
-      <label class="rate-value">1</label>
-      <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
-      <label for="pitch">Тональность речи - Pitch speach: </label>
-      <label class="pitch-value">1</label>
-      <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
-    </div>
-  </br>
-    <section id="lessons"><b><i>Каждый блок ввода текста следует заканчивать "." для того чтобы при дальнейших прочтениях блока не прочитывался предыдущий блок.</i></b></section>
+    <header>
+      <h4><u>Для работы звука, необходимо использовать браузер Google Chrome настольной версии.</u></h4>
+      <b><i>Каждый блок ввода текста следует заканчивать "." для того чтобы при дальнейших прочтениях блока не прочитывался предыдущий блок.</i></b>
+    </header>
+    <nav>
+      <button class="tablink" onclick="openCity('Letters', this, 'red')" >Single letters</button>
+      <button class="tablink" onclick="openCity('Words', this, 'green')">Letters in words</button>
+      <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
+      <button class="tablink" onclick="openCity('Settings', this, 'orange')" id="defaultOpen">Settings</button>
+
+      <section id="Letters" class="tabcontent"></section>
+      <section id="Words" class="tabcontent"></section>
+
+      <div id="Tokyo" class="tabcontent">
+       <h3>Tokyo</h3>
+       <p>Tokyo is the capital of Japan.</p>
+      </div>
+
+      <section id="Settings" class="tabcontent">
+        <p>Измените голос и язык, используя раскрывающееся меню. Озвучивание последнено написанного слова происходит после пробела. Озвучивание предложение после нажатия: ".", "!" или "?".</p>
+        <div>
+          <select></select>
+        </div>
+        <div>
+          <label for="rate">Скорость речи - Speed speach: </label>
+          <label class="rate-value">1</label>
+          <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate"></br>
+          <label for="pitch">Тональность речи - Pitch speach: </label>
+          <label class="pitch-value">1</label>
+          <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+        </div>
+      </section>
+    </nav>
+    <section id="lessons"></section>
 
     <script src="data/rulesOfRead.js"></script>
     <script src="data/consonantLetters.js"></script>
-    <script type="text/javascript">
-      const section = document.getElementById("lessons");
-
-      function createElement(el, contain){
-        let elType = document.createElement(el);
-        elType.appendChild(document.createTextNode(contain));
-        return elType;
-      }
-
-      function createRuleOfConsonants(letter){
-        section.appendChild(createElement("p", `Правило чтения буквы "${letter.toUpperCase()}" - звучит как русский звук [${consonantLetters[letter]}]. Напечатайте по несколько раз букву для прослушивания её алфавитного произношение, как ориентира для запоминания.`));
-        section.appendChild(createElement("textarea", ''));
-      }
-      section.appendChild(createElement("h3", `Правило чтения согласных букв английского языка.`));
-      Object.keys(consonantLetters).forEach(el => createRuleOfConsonants(el));
-
-      function createUnit(element, contain){
-        section.appendChild(createElement("h3", `Правило чтения буквы "${contain.char.toUpperCase()}".`));
-        if(contain.intro) {
-          section.appendChild(createElement("p", `${contain.intro}`));
-        }
-
-        for (let rule of contain.def){
-          section.appendChild(createElement("p", `"${contain.char.toUpperCase()}" - ${rule.rule}`));
-          section.appendChild(createElement("b", `${rule.exam}`));
-          section.appendChild(createElement("textarea", ''));
-          if (rule.exce){
-            section.appendChild(createElement("b", `Исключения: ${rule.exce}.`));
-            section.appendChild(createElement("textarea", ''));
-          }
-        }
-      }
-
-      Object.values(rulesOfRead).forEach(el => createUnit("", el));
-
-    </script>
+    <script src="js/scriptGenContain.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

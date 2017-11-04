@@ -6,21 +6,25 @@ const rulesOfRead = {
     "def": [
       {
         "rule": "звучит как русский звук [с], только на альвеолах, если стоит перед гласными [e]:",
+        "write": "+e",
         "ts": "s",
         "exam": "cell, dance, face, fence, force, ice, juice, nice, ocean, once, pace, peace, piece, place, price, race, rice, sauce, scene, since, slice, space, trace, twice, voice"
       },
       {
         "rule": "звучит как русский звук [с], только на альвеолах, если стоит перед гласными [i]:",
+        "write": "+i",
         "ts": "s",
         "exam": "acid, ancient, circle, cite, citizen, city, civil, council, crucial, decide, deficit, racial, recipe, science, social, society, special, species, suicide"
       },
       {
         "rule": "звучит как русский звук [с], только на альвеолах, если стоит перед гласными [y]:",
+        "write": "+y",
         "ts": "s",
         "exam": "agency, cycle, democracy, efficiency, emergency, frequency, legacy, policy, pregnancy, privacy, tendency"
       },
       {
         "rule": "звучит как русский звук [к], но сильнее, в остальных случая, если НЕ стоит перед гласными [e, i, y]:",
+        "write": "-e -i -y",
         "ts": "k",
         "exam": "act, cake, call, camp, can, cap, car, card, care, case, cash, cast, cat, club, clue, coal, coat, code, cold, come, cook, cool, cop, cope, copy, core, corn, cost, cow, crew, crop, cry, cup, cut, etc, fact"
       }
@@ -34,21 +38,25 @@ const rulesOfRead = {
     "def": [
       {
         "rule": "звучит как сочетание русских звуков [дж], если стоит перед гласными [e]:",
+        "write": "+e",
         "ts": "d3",
         "exam": "gentleman, age, agency, agenda, agent, bridge, budget, change, charge, damage, danger, edge, emerge, engage,  garage, gender, gene, gently,  huge, image, judge, large, legend, manage, orange, page, range, stage, urge, wage"
       },
       {
         "rule": "звучит как сочетание русских звуков [дж], если стоит перед гласными [i]:",
+        "write": "+i",
         "ts": "d3",
         "exam": "gin, changing, digital, engine, engineer, giant, imagine, margin, origin, original, regime, region, regional, register, religion"
       },
       {
         "rule": "звучит как сочетание русских звуков [дж], если стоит перед гласными [y]:",
+        "write": "+y",
         "ts": "d3",
         "exam": "gym, energy, psychology, strategy, technology"
       },
       {
         "rule": "звучит как русский звук [г]. В остальных случаях, если НЕ стоит перед гласными [e, i, y]:",
+        "write": "-e, -i, -y",
         "ts": "g",
         "exam": "glad, dog, grade, bag",
         "exce": "eager, anger, singer, get, target, finger, forget, gear, begin, gift, gifted, girl, give, given"
@@ -157,6 +165,7 @@ const rulesOfRead = {
     "def": [
       {
         "rule": "звучит как русский звук [х], если после сочетания стоит [o]:",
+        "write": "+o",
         "ts": "h",
         "exam": "Who, whom, whose, whomsoever, whole, whore, whorehouse."
       },
@@ -207,9 +216,14 @@ const rulesOfRead = {
         "exam": "qualify, quality, quarter, quarterback, queen, question, quick, quickly, quiet, quietly, quit, quite, quote"
       },
       {
-        "rule": "звучит как русский звук [к], обычно в конце слова:",
+        "rule": "звучит как русский звук [к], если это сочетание стоит в конце слова, а за ним идет нечитаемая [e]:",
         "ts": "k",
-        "exam": "acquire, adequate, antique, cheque, consequence, equal, equally, equipment, frequency, frequent, frequently, inquiry, request, require, requirement, sequence, square, squeeze, subsequent, technique, unique"
+        "exam": "antique, cheque, technique, unique"
+      },
+      {
+        "rule": "звучит как русский звук [ку], в середине слова:",
+        "ts": "k",
+        "exam": "acquire, adequate, consequence, equal, equally, equipment, frequency, frequent, frequently, inquiry, request, require, requirement, sequence, square, squeeze, subsequent"
       }
     ],
     "dolu": "2017-11-02 03:31:42.292099"
