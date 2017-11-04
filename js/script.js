@@ -55,7 +55,6 @@ window.addEventListener("keydown", function (event) {
     return; // Do nothing if the event was already processed
   }
 
-  // const inputText = document.getElementById("text_id").value;
   switch (event.keyCode) {
     case 9: // tab
     case 32: // key space
@@ -69,7 +68,6 @@ window.addEventListener("keydown", function (event) {
           inputText += textareaCount[i].value+",";
         }
       }
-      // document.getElementById("text_id").value = inputText;
       break;
     default:
       return; // Quit when this doesn't handle the key event.
@@ -83,10 +81,6 @@ window.addEventListener("keydown", function (event) {
     case 32: //key space
       synthVoice(inputLastWord); //read last word.
       break;
-    // case 13: //enter
-    //   synthVoice(document.getElementById("text_id").value.split(/[\\.!\?\s+]/).slice(-2)); //read last word.
-    //   synthVoice(document.getElementById("text_id").value.split(/[\\.!\?]/).slice(-2)); //read last word.
-    //   break;
     case 9: // tab
     case 49: // kes "!"
     case 190: // key "."
