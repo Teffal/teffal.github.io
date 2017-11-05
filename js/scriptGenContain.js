@@ -1,6 +1,9 @@
 const sectionLetters = document.getElementById("Letters");
 const sectionWords = document.getElementById("Words");
-const section = document.getElementById("lessons");
+const sectionSylFirst = document.getElementById("SylFirst");
+const sectionSylSecond = document.getElementById("SylSecond");
+const sectionSylThird = document.getElementById("SylThird");
+const sectionSylFourth = document.getElementById("SylFourth");
 
 function createElement(el, contain){
   let elType = document.createElement(el);
@@ -15,21 +18,26 @@ function createRuleOfConsonants(letter){
 sectionLetters.appendChild(createElement("h3", `Правило чтения согласных букв английского языка.`));
 Object.keys(consonantLetters).forEach(el => createRuleOfConsonants(el));
 
-function createUnit(element, contain){
-  sectionWords.appendChild(createElement("h3", `Правило чтения буквы "${contain.char.toUpperCase()}".`));
+function createUnit(self, contain){
+  self.appendChild(createElement("h3", `Правило чтения буквы "${contain.char.toUpperCase()}".`));
   if(contain.intro) {
-    sectionWords.appendChild(createElement("p", `${contain.intro}`));
+    self.appendChild(createElement("p", `${contain.intro}`));
   }
-
   for (let rule of contain.def){
-    sectionWords.appendChild(createElement("p", `"${contain.char.toUpperCase()}" - ${rule.rule}`));
-    sectionWords.appendChild(createElement("b", `${rule.exam}`));
-    sectionWords.appendChild(createElement("textarea", ''));
+    self.appendChild(createElement("p", `"${contain.char.toUpperCase()}" - ${rule.rule}`));
+    self.appendChild(createElement("b", `${rule.exam}`));
+    self.appendChild(createElement("textarea", ''));
     if (rule.exce){
-      sectionWords.appendChild(createElement("b", `Исключения: ${rule.exce}.`));
-      sectionWords.appendChild(createElement("textarea", ''));
+      self.appendChild(createElement("b", `Исключения: ${rule.exce}.`));
+      self.appendChild(createElement("textarea", ''));
     }
   }
 }
+Object.values(rulesOfRead).forEach(el => createUnit(sectionWords, el));
 
-Object.values(rulesOfRead).forEach(el => createUnit("", el));
+sectionSylFirst.appendChild(createElement("h3", syllableFirst.type));
+Object.values(syllableFirst.letters).forEach(el => createUnit(sectionSylFirst, el));
+
+sectionSylSecond.appendChild(createElement("h3", syllableSecond.type));
+sectionSylSecond.appendChild(createElement("p", syllableSecond.intro));
+Object.values(syllableSecond.letters).forEach(el => createUnit(sectionSylSecond, el));

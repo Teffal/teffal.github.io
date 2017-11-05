@@ -19,18 +19,20 @@
       <b><i>Каждый блок ввода текста следует заканчивать "." для того чтобы при дальнейших прочтениях блока не прочитывался предыдущий блок.</i></b>
     </header>
     <nav>
-      <button class="tablink" onclick="openCity('Letters', this, 'red')" >Single letters</button>
-      <button class="tablink" onclick="openCity('Words', this, 'green')">Letters in words</button>
-      <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
-      <button class="tablink" onclick="openCity('Settings', this, 'orange')" id="defaultOpen">Settings</button>
+      <button class="tablink" onclick="openCity('Letters', this, 'red')" >Single</br>letters</button>
+      <button class="tablink" onclick="openCity('Words', this, 'orange')">Letters in words</button>
+      <button class="tablink" onclick="openCity('SylFirst', this, 'green')">The first syllable</button>
+      <button class="tablink" onclick="openCity('SylSecond', this, 'blue')">The second syllable</button>
+      <button class="tablink" onclick="openCity('SylThird', this, 'blue')">The third syllable</button>
+      <button class="tablink" onclick="openCity('SylFourth', this, 'blue')">The fourth syllable</button>
+      <button class="tablink" onclick="openCity('Settings', this, 'orange')" id="defaultOpen">Settings</br>...</button>
 
       <section id="Letters" class="tabcontent"></section>
       <section id="Words" class="tabcontent"></section>
-
-      <div id="Tokyo" class="tabcontent">
-       <h3>Tokyo</h3>
-       <p>Tokyo is the capital of Japan.</p>
-      </div>
+      <section id="SylFirst" class="tabcontent"></section>
+      <section id="SylSecond" class="tabcontent"></section>
+      <section id="SylThird" class="tabcontent"></section>
+      <section id="SylFourth" class="tabcontent"></section>
 
       <section id="Settings" class="tabcontent">
         <p>Измените голос и язык, используя раскрывающееся меню. Озвучивание последнено написанного слова происходит после пробела. Озвучивание предложение после нажатия: ".", "!" или "?".</p>
@@ -51,6 +53,9 @@
 
     <script src="data/rulesOfRead.js"></script>
     <script src="data/consonantLetters.js"></script>
+    <script src="data/syllableFirst.js"></script>
+    <script src="data/syllableSecond.js"></script>
+
     <script src="js/scriptGenContain.js"></script>
     <script src="js/script.js"></script>
   </body>

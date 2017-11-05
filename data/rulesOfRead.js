@@ -26,7 +26,7 @@ const rulesOfRead = {
         "rule": "звучит как русский звук [к], но сильнее, в остальных случая, если НЕ стоит перед гласными [e, i, y]:",
         "write": "-e -i -y",
         "ts": "k",
-        "exam": "act, cake, call, camp, can, cap, car, card, care, case, cash, cast, cat, club, clue, coal, coat, code, cold, come, cook, cool, cop, cope, copy, core, corn, cost, cow, crew, crop, cry, cup, cut, etc, fact"
+        "exam": "act, cake, call, camp, can, cap, car, card, care, case, cash, cast, cat, club, clue, coal, coat, code, cold, come, cook, cool, cop, cope, copy, core, corn, cost, cow, crew, crop, cry, cup, cut, fact"
       }
     ],
     "dolu": "2017-11-02 03:31:42.292099"
@@ -60,6 +60,19 @@ const rulesOfRead = {
         "ts": "g",
         "exam": "glad, dog, grade, bag",
         "exce": "eager, anger, singer, get, target, finger, forget, gear, begin, gift, gifted, girl, give, given"
+      }
+    ],
+    "dolu": "2017-11-02 03:31:42.292099"
+  },
+  "s": {
+    "head": {},
+    "char": "s",
+    "vowel": false,
+    "def": [
+      {
+        "rule": "звучит как русский звук [з], если стоит между гласными:",
+        "ts": "z",
+        "exam": "base, busy, case, ease, easy, lose, nose, pose, rise, rose, use, used, user, wise"
       }
     ],
     "dolu": "2017-11-02 03:31:42.292099"
