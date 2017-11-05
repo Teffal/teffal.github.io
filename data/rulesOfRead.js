@@ -73,6 +73,11 @@ const rulesOfRead = {
         "rule": "звучит как русский звук [з], если стоит между гласными:",
         "ts": "z",
         "exam": "base, busy, case, ease, easy, lose, nose, pose, rise, rose, use, used, user, wise"
+      },
+      {
+        "rule": "звучит как русский звук [с], в остальных случаях:",
+        "ts": "s",
+        "exam": "as, ask, bus, gas, his, its, sad, say, sea, see, set, sex, sin, sir, sit, six, ski, sky, so, son, sue, sun, us, yes"
       }
     ],
     "dolu": "2017-11-02 03:31:42.292099"
