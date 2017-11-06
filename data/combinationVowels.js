@@ -148,4 +148,4 @@ let combinationVowels = {
   }
 }
 
-Object.values(combinationVowels.letters).forEach(el => console.log(el));
+// Object.values(combinationVowels.letters).forEach(el => console.log(el));

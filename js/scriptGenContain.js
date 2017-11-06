@@ -5,6 +5,8 @@ const sectionSylFirst = document.getElementById("SylFirst");
 const sectionSylSecond = document.getElementById("SylSecond");
 const sectionSylThird = document.getElementById("SylThird");
 const sectionSylFourth = document.getElementById("SylFourth");
+const sectionPrefixes = document.getElementById("Prefixes");
+const sectionUnstressedVowels = document.getElementById("UnstressedVowels");
 
 function createElement(el, contain){
   let elType = document.createElement(el);
@@ -20,7 +22,7 @@ sectionLetters.appendChild(createElement("h3", `Правило чтения со
 Object.keys(consonantLetters).forEach(el => createRuleOfConsonants(el));
 
 function createUnit(self, contain){
-  self.appendChild(createElement("h3", `Правило чтения буквы "${contain.char.toUpperCase()}".`));
+  self.appendChild(createElement("h4", `Чтение "${contain.char.toUpperCase()}".`));
   if(contain.intro) {
     self.appendChild(createElement("p", `${contain.intro}`));
   }
@@ -52,3 +54,11 @@ Object.values(syllableThird.letters).forEach(el => createUnit(sectionSylThird, e
 
 sectionSylFourth.appendChild(createElement("h3", syllableFourth.type));
 Object.values(syllableFourth.letters).forEach(el => createUnit(sectionSylFourth, el));
+
+sectionPrefixes.appendChild(createElement("h3", prefixes.type));
+sectionPrefixes.appendChild(createElement("p", prefixes.intro));
+Object.values(prefixes.letters).forEach(el => createUnit(sectionPrefixes, el));
+
+sectionUnstressedVowels.appendChild(createElement("h3", unstressedVowels.type));
+sectionUnstressedVowels.appendChild(createElement("p", unstressedVowels.intro));
+Object.values(unstressedVowels.letters).forEach(el => createUnit(sectionUnstressedVowels, el));
