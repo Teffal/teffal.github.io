@@ -39,19 +39,19 @@ const rulesOfRead = {
       {
         "rule": "звучит как сочетание русских звуков [дж], если стоит перед гласными [e]:",
         "write": "+e",
-        "ts": "d3",
+        "ts": "dƷ",
         "exam": "gentleman, age, agency, agenda, agent, bridge, budget, change, charge, damage, danger, edge, emerge, engage,  garage, gender, gene, gently,  huge, image, judge, large, legend, manage, orange, page, range, stage, urge, wage"
       },
       {
         "rule": "звучит как сочетание русских звуков [дж], если стоит перед гласными [i]:",
         "write": "+i",
-        "ts": "d3",
+        "ts": "dƷ",
         "exam": "gin, changing, digital, engine, engineer, giant, imagine, margin, origin, original, regime, region, regional, register, religion"
       },
       {
         "rule": "звучит как сочетание русских звуков [дж], если стоит перед гласными [y]:",
         "write": "+y",
-        "ts": "d3",
+        "ts": "dƷ",
         "exam": "gym, energy, psychology, strategy, technology"
       },
       {
@@ -71,7 +71,7 @@ const rulesOfRead = {
     "def": [
       {
         "rule": "звучит как русский звук [з], если стоит между гласными:",
-        "ts": "z",
+        "ts": "Ʒ",
         "exam": "base, busy, case, ease, easy, lose, nose, pose, rise, rose, use, used, user, wise"
       },
       {

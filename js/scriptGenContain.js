@@ -41,3 +41,9 @@ Object.values(syllableFirst.letters).forEach(el => createUnit(sectionSylFirst, e
 sectionSylSecond.appendChild(createElement("h3", syllableSecond.type));
 sectionSylSecond.appendChild(createElement("p", syllableSecond.intro));
 Object.values(syllableSecond.letters).forEach(el => createUnit(sectionSylSecond, el));
+
+sectionSylThird.appendChild(createElement("h3", syllableThird.type));
+Object.values(syllableThird.letters).forEach(el => createUnit(sectionSylThird, el));
+
+sectionSylFourth.appendChild(createElement("h3", syllableFourth.type));
+Object.values(syllableFourth.letters).forEach(el => createUnit(sectionSylFourth, el));
