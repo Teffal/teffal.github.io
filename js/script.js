@@ -55,6 +55,7 @@ window.addEventListener("keydown", function (event) {
     return; // Do nothing if the event was already processed
   }
 
+  // склеивает весь текст со всех текстовых клоков, для проигрывания.
   switch (event.keyCode) {
     case 9: // tab
     case 32: // key space

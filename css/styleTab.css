@@ -2,14 +2,15 @@
 .tablink {
   background-color: #555;
   color: white;
-  float: left;
+  /*float: left;*/
   border: none;
+  display: block;
   outline: none;
   word-wrap: normal;
   cursor: pointer;
   padding: 20px 10px;
   font-size: 15px;
-  width: 14.2%;
+  width: 100%;
 }
 
 /* Change background color of buttons on hover */

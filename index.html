@@ -10,6 +10,7 @@
     <title>Rules of Read of English</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/styleTab.css">
+    <link rel="stylesheet" href="css/styleDropdownButton.css">
     <!-- Yandex.Metrika counter -->
   	<script type="text/javascript">
 	    (function (d, w, c) {
@@ -42,26 +43,48 @@
     <script src="js/scriptTab.js"></script>
   </head>
   <body>
-    <header>
-      <h4><u>Для работы звука, необходимо использовать браузер Google Chrome настольной версии.</u></h4>
-      <b><i>Поля для ввода текста озвучиваются в соответствии с выбранным языком. </br> Озвучивание последнего слова происходит после нажатия клавиши пробел (после слова). </br> После знака окончания предложения (".", "!" или "?") озвучивается последнее предложение. </br> При необходимости ставьте запятые, они при озвучивании позволяют увеличить паузу в тех местах где она стоит при озвучивания всего предложения.</br> Заканчивайте каждое поле знаком окончания предложения (".", "!" или "?"), чтобы при озвучивании поля не озвучивались предыдущие поля.</i></b></br>
-      Для перемещения к следующему полю достаточно нажать клавишу TAB->.
-    </header>
+    <header></header>
+
     <nav>
-      <button class="tablink" onclick="openCity('Letters', this, 'red')" >Single letters</button>
-      <button class="tablink" onclick="openCity('Words', this, 'orange')">Letters in words</button>
-      <button class="tablink" onclick="openCity('SylFirst', this, 'green')">The first syllable</button>
-      <button class="tablink" onclick="openCity('SylSecond', this, 'blue')">The second syllable</button>
-      <button class="tablink" onclick="openCity('SylThird', this, 'blue')">The third syllable</button>
-      <button class="tablink" onclick="openCity('SylFourth', this, 'blue')">The fourth syllable</button>
-      <button class="tablink" onclick="openCity('Settings', this, 'orange')" id="defaultOpen">Settings</button>
-      </br></br>
+      <div class="navbar">
+       <a href="#home" onclick="openCity('Home', this)">Home</a>
+       <a href="#news">News</a>
+       <div class="dropdown">
+         <button class="dropbtn">Rules of read<i class="fa fa-caret-down"></i></button>
+         <div class="dropdown-content">
+           <button class="tablink" onclick="openCity('Letters', this, 'red')">Single letters</button>
+           <button class="tablink" onclick="openCity('Words', this, 'orange')">Letters in words</button>
+           <button class="tablink" onclick="openCity('Vowels', this, 'green')">Combinations of vowels</button>
+           <button class="tablink" onclick="openCity('SylFirst', this, 'green')">The first syllable</button>
+           <button class="tablink" onclick="openCity('SylSecond', this, 'blue')">The second syllable</button>
+           <button class="tablink" onclick="openCity('SylThird', this, 'blue')">The third syllable</button>
+           <button class="tablink" onclick="openCity('SylFourth', this, 'blue')">The fourth syllable</button>
+         </div>
+       </div>
+       <div class="dropdown">
+         <button class="dropbtn" onclick="openCity('Settings', this)" id="defaultOpen">Settings</button>
+       </div>
+      </div>
+
       <section id="Letters" class="tabcontent"></section>
       <section id="Words" class="tabcontent"></section>
+      <section id="Vowels" class="tabcontent"></section>
       <section id="SylFirst" class="tabcontent"></section>
       <section id="SylSecond" class="tabcontent"></section>
       <section id="SylThird" class="tabcontent"></section>
       <section id="SylFourth" class="tabcontent"></section>
+
+      <section id="Home" class="tabcontent">
+        <ol>
+         <li><u>Для работы звука, необходимо использовать браузер Google Chrome настольной версии.</u></li>
+         <li>Поля для ввода текста озвучиваются в соответствии с выбранным языком.</li>
+         <li>Озвучивание последнего слова происходит после нажатия клавиши пробел (после слова).</li>
+         <li>После знака окончания предложения (".", "!" или "?") озвучивается последнее предложение.</li>
+         <li>При необходимости ставьте запятые, они при озвучивании позволяют увеличить паузу в тех местах где она стоит при озвучивания всего предложения.</li>
+         <li>Заканчивайте каждое поле знаком окончания предложения (".", "!" или "?"), чтобы при озвучивании поля не озвучивались предыдущие поля.</li>
+         <li>Для перемещения к следующему полю достаточно нажать клавишу TAB->.</li>
+       </ol>
+      </section>
 
       <section id="Settings" class="tabcontent">
         <p>Измените голос и язык, используя раскрывающееся меню. Озвучивание последнено написанного слова происходит после пробела. Озвучивание предложение после нажатия: ".", "!" или "?".</p>
@@ -78,14 +101,15 @@
         </div>
       </section>
     </nav>
-    <section id="lessons"></section>
 
     <script src="data/rulesOfRead.js"></script>
     <script src="data/consonantLetters.js"></script>
+    <script src="data/combinationVowels.js"></script>
     <script src="data/syllableFirst.js"></script>
     <script src="data/syllableSecond.js"></script>
     <script src="data/syllableThird.js"></script>
     <script src="data/syllableFourth.js"></script>
+
 
     <script src="js/scriptGenContain.js"></script>
     <script src="js/script.js"></script>

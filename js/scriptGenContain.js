@@ -1,5 +1,6 @@
 const sectionLetters = document.getElementById("Letters");
 const sectionWords = document.getElementById("Words");
+const sectionVowels = document.getElementById("Vowels");
 const sectionSylFirst = document.getElementById("SylFirst");
 const sectionSylSecond = document.getElementById("SylSecond");
 const sectionSylThird = document.getElementById("SylThird");
@@ -33,7 +34,11 @@ function createUnit(self, contain){
     }
   }
 }
+
 Object.values(rulesOfRead).forEach(el => createUnit(sectionWords, el));
+
+sectionVowels.appendChild(createElement("h3", combinationVowels.type));
+Object.values(combinationVowels.letters).forEach(el => createUnit(sectionVowels, el));
 
 sectionSylFirst.appendChild(createElement("h3", syllableFirst.type));
 Object.values(syllableFirst.letters).forEach(el => createUnit(sectionSylFirst, el));
