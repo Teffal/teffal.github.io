@@ -9,8 +9,9 @@
     </style>
     <title>Rules of Read of English</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="css/styleTab.css">
-    <link rel="stylesheet" href="css/styleDropdownButton.css">
+    <!-- <link rel="stylesheet" href="css/styleTab.css"> -->
+    <!-- <link rel="stylesheet" href="css/styleDropdownButton.css"> -->
+    <link rel="stylesheet" href="css/styleIndex.css">
     <!-- Yandex.Metrika counter -->
   	<script type="text/javascript">
 	    (function (d, w, c) {
@@ -44,41 +45,11 @@
   </head>
   <body>
     <header></header>
-
-    <nav>
-      <div class="navbar">
-       <a href="#home" onclick="openCity('Home', this)">Home</a>
-       <a href="#news">News</a>
-       <div class="dropdown">
-         <button class="dropbtn">Rules of read<i class="fa fa-caret-down"></i></button>
-         <div class="dropdown-content">
-           <button class="tablink" onclick="openCity('Letters', this, 'red')">Single letters</button>
-           <button class="tablink" onclick="openCity('Words', this, 'orange')">Letters in words</button>
-           <button class="tablink" onclick="openCity('Vowels', this, 'green')">Combinations of vowels</button>
-           <button class="tablink" onclick="openCity('SylFirst', this, 'green')">The first syllable</button>
-           <button class="tablink" onclick="openCity('SylSecond', this, 'blue')">The second syllable</button>
-           <button class="tablink" onclick="openCity('SylThird', this, 'blue')">The third syllable</button>
-           <button class="tablink" onclick="openCity('SylFourth', this, 'blue')">The fourth syllable</button>
-           <button class="tablink" onclick="openCity('Prefixes', this, 'blue')">Prefixes</button>
-           <button class="tablink" onclick="openCity('UnstressedVowels', this, 'blue')">Unstressed vowels</button>
-         </div>
-       </div>
-       <div class="dropdown">
-         <button class="dropbtn" onclick="openCity('Settings', this)" id="defaultOpen">Settings</button>
-       </div>
-      </div>
-
-      <section id="Letters" class="tabcontent"></section>
-      <section id="Words" class="tabcontent"></section>
-      <section id="Vowels" class="tabcontent"></section>
-      <section id="SylFirst" class="tabcontent"></section>
-      <section id="SylSecond" class="tabcontent"></section>
-      <section id="SylThird" class="tabcontent"></section>
-      <section id="SylFourth" class="tabcontent"></section>
-      <section id="Prefixes" class="tabcontent"></section>
-      <section id="UnstressedVowels" class="tabcontent"></section>
-
-
+    <nav class="navbar">
+      <a href="#home" class="tablink" onclick="getContent('Home', this, 'orange')" id="defaultOpen">Главная</a>
+      <a href="#news" class="tablink" onclick="getContent('Lessons', this, 'green')">Уроки</a>
+      <a href="#contact" class="tablink" onclick="getContent('Settings', this, 'blue')">О сайте</a>
+    </nav>
       <section id="Home" class="tabcontent">
         <ol>
          <li><u>Для работы звука, необходимо использовать браузер Google Chrome настольной версии.</u></li>
@@ -89,6 +60,15 @@
          <li>Заканчивайте каждое поле знаком окончания предложения (".", "!" или "?"), чтобы при озвучивании поля не озвучивались предыдущие поля.</li>
          <li>Для перемещения к следующему полю достаточно нажать клавишу TAB->.</li>
        </ol>
+      </section>
+
+      <section id="Lessons" class="tabcontent">
+        <aside>
+          <ul id="AddLesson">
+            <!-- <li><a class="active" href="#home">Home</a></li> -->
+          </ul>
+        </aside>
+        <section id="LessonContain" style="margin-left:25%; padding:1px 16px;height:1000px;"></section>
       </section>
 
       <section id="Settings" class="tabcontent">
@@ -117,8 +97,8 @@
     <script src="data/prefixes.js"></script>
     <script src="data/unstressedVowels.js"></script>
 
-
-    <script src="js/scriptGenContain.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/scriptContentGet.js"></script>
+    <script src="js/scriptLessonGet.js"></script>
+    <script src="js/scriptSpeechSynthesis.js"></script>
   </body>
 </html>

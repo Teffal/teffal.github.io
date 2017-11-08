@@ -1,4 +1,8 @@
-function openCity(cityName, elmnt, color) {
+'use strict'
+
+const asideNav = document.getElementById("AddLesson");
+
+function getContent(content, elment, color) {
   // Hide all elements with class="tabcontent" by default */
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -13,10 +17,18 @@ function openCity(cityName, elmnt, color) {
   }
 
   // Show the specific tab content
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(content).style.display = "block";
 
   // Add the specific color to the button used to open the tab content
-  elmnt.style.backgroundColor = color;
+  elment.style.backgroundColor = color;
+
+  // Add the lessons in aside menu
+  asideNav.innerHTML = "";
+  if (content === "Lessons") {
+    Object.values(lessonsRead).forEach(lesson => asideNav.appendChild(
+      createElement("li",
+      createElement("a", lesson, function() {getLessonContain(lesson, this, "green")})))); // add onclick function
+  }
 }
 
 // Get the element with id="defaultOpen" and click on it
