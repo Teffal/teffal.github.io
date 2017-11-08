@@ -18,8 +18,9 @@ function populateVoiceList() {
     var option = document.createElement('option');
     option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
 
+
     if(voices[i].default) {
-      option.textContent += ' -- DEFAULT';
+      option.textContent += ' -- DEFAULT'; //установить звук по умолчанию нельзя, он задается системой, но можно изменить его среди выбранных
     }
 
     option.setAttribute('data-lang', voices[i].lang);
@@ -66,7 +67,7 @@ window.addEventListener("keydown", function (event) {
       let textareaCount = document.getElementsByTagName("textarea");
       for (var i = 0; i < textareaCount.length; i++) {
         if (textareaCount[i].value){
-          inputText += textareaCount[i].value+",";
+          inputText += textareaCount[i].value;
         }
       }
       break;

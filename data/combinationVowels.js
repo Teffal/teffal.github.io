@@ -8,7 +8,7 @@ let combinationVowels = {
         {
           "rule": "звучит как русский звук [эй], звук в английском языке [ei]:",
           "ts": "ei",
-          "exam": "aid, aide, aim, air, fail, fair, gain, hair, jail, mail, main, pain, pair, rail, rain, tail, wait"
+          "exam": "aid, aide, aim, fail, fair, gain, jail, mail, main, pain, rail, rain, tail, wait"
         }
       ]
     },

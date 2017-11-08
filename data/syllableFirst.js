@@ -6,7 +6,7 @@ let syllableFirst = {
       "vowel": true,
       "def": [
         {
-          "rule": "звучит как русский звук [э], самый открытый звук в английском языке [æ]:",
+          "rule": "звучит как долгий русский звук [э], самый открытый звук в английском языке [æ]:",
           "ts": "æ",
           "exam": "bat, cat, dad, fat, lad, mad, man, mat, mask, map, pad, pat, pan, rap, ran, sat, tan, tap, tack"
         }
