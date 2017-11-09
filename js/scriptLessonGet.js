@@ -1,19 +1,18 @@
 'use strict'
 
-const lessonsRead = {
-  Letters: "Single letters",
-  Words: "Letters in words",
-  Vowels: "Combinations of vowels",
-  SylFirst: "The first syllable",
-  SylSecond: "The second syllable",
-  SylThird: "The third syllable",
-  SylFourth: "The fourth syllable",
-  Prefixes: "Prefixes",
-  UnstressedVowels:"Unstressed vowels"
-}
+const lessonsRead = [
+  {eng: "Single letters", rus: "Одиночные согласные буквы"},
+  {eng: "Letters in words", rus: "Буквы в словах"},
+  {eng: "Combinations of vowels", rus: "Сочетание гласных"},
+  {eng: "The first syllable", rus: "Первый тип слога"},
+  {eng: "The second syllable", rus: "Второй тип слога"},
+  {eng: "The third syllable", rus: "Третий тип слога"},
+  {eng: "The fourth syllable", rus: "Четвертый тип слога"},
+  {eng: "Prefixes", rus: "Предлоги"},
+  {eng:"Unstressed vowels", rus: "Безударные гласные"}
+];
 
 const sectionLesson = document.getElementById("LessonContain");
-
 // Add differen html element
 function createElement(el, contain, myFunct){
   let elType = document.createElement(el);
@@ -26,6 +25,7 @@ function createElement(el, contain, myFunct){
 
   if (myFunct) {
     elType.addEventListener("click", myFunct);
+    elType.setAttribute('class', "AllLessons");
   }
   return elType;
 }
@@ -53,7 +53,17 @@ function createUnit(self, contain){
   }
 }
 
-function getLessonContain(nameLesson, s, par2) {
+function getLessonContain(nameLesson, elment, color) {
+  let i, allLessons;
+  // Remove the background color of all tablinks/buttons
+  allLessons = document.getElementsByClassName("AllLessons");
+  for (i = 0; i < allLessons.length; i++) {
+      allLessons[i].style.backgroundColor = "";
+  }
+
+  // Add the specific color to the button used to open the tab content
+  elment.style.backgroundColor = color;
+
   sectionLesson.innerHTML = "";
   switch (nameLesson) {
     case "Single letters":
