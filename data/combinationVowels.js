@@ -1,4 +1,4 @@
-let combinationVowels = {
+const combinationVowels = {
   "type": "Cочетания гласных, которые дают определенные звуки.",
   "letters": {
     "ai": {
@@ -146,6 +146,6 @@ let combinationVowels = {
       ]
     }
   }
-}
+};
 
 // Object.values(combinationVowels.letters).forEach(el => console.log(el));

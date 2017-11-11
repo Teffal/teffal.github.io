@@ -1,4 +1,4 @@
-consonantLetters = {
+const consonantLetters = {
   "b":"б",
   "d":"д",
   "f":"ф",
@@ -15,4 +15,4 @@ consonantLetters = {
   "w":"в",
   "x":"кс",
   "z":"з"
-}
+};

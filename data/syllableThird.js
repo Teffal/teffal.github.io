@@ -1,4 +1,4 @@
-let syllableThird = {
+const syllableThird = {
   "type": "Третий тип слога: за гласной идет [r] и они дают один звук вместе.",
   "letters": {
     "ar": {
@@ -57,6 +57,6 @@ let syllableThird = {
       ]
     }
   }
-}
+};
 
 // Object.values(syllableFirst.letters).forEach(el => console.log(el));

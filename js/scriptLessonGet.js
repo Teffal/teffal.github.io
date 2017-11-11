@@ -1,6 +1,6 @@
 'use strict'
 
-const lessonsRead = [
+const readWrite = [
   {eng: "Single letters", rus: "Одиночные согласные буквы"},
   {eng: "Letters in words", rus: "Буквы в словах"},
   {eng: "Combinations of vowels", rus: "Сочетание гласных"},
@@ -9,7 +9,7 @@ const lessonsRead = [
   {eng: "The third syllable", rus: "Третий тип слога"},
   {eng: "The fourth syllable", rus: "Четвертый тип слога"},
   {eng: "Prefixes", rus: "Предлоги"},
-  {eng:"Unstressed vowels", rus: "Безударные гласные"}
+  {eng: "Unstressed vowels", rus: "Безударные гласные"}
 ];
 
 const sectionLesson = document.getElementById("LessonContain");
@@ -31,10 +31,16 @@ function createElement(el, contain, myFunct){
 }
 
 // Add first lesson: Single letters
-function createRuleOfConsonants(letter){
-      sectionLesson.appendChild(createElement("p", `Правило чтения буквы "${letter.toUpperCase()}" - звучит как русский звук [${consonantLetters[letter]}]. Напечатайте по несколько раз букву для прослушивания её алфавитного произношение, как ориентира для запоминания.`));
-      sectionLesson.appendChild(createElement("textarea", ''));
-    }
+function createRuleOfConsonants(letter) {
+  sectionLesson.appendChild(createElement("p", `Правило чтения буквы "${letter.toUpperCase()}" - звучит как русский звук [${consonantLetters[letter]}]. Напечатайте по несколько раз букву для прослушивания её алфавитного произношение, как ориентира для запоминания.`));
+  sectionLesson.appendChild(createElement("textarea", ''));
+}
+
+// Add first lesson: Single sentences
+function createLessonsOne(sent) {
+  sectionLesson.appendChild(createElement("p", sent));
+  sectionLesson.appendChild(createElement("textarea", ''));
+}
 
 // Add another lessons
 function createUnit(self, contain){
@@ -66,7 +72,7 @@ function getLessonContain(nameLesson, elment, color) {
 
   sectionLesson.innerHTML = "";
   switch (nameLesson) {
-    case "Single letters":
+    case "Single letters": // Title need lesson
     sectionLesson.appendChild(createElement("h3", `Правило чтения согласных букв английского языка.`));
     Object.keys(consonantLetters).forEach(el => createRuleOfConsonants(el));
     break;
@@ -103,6 +109,10 @@ function getLessonContain(nameLesson, elment, color) {
     sectionLesson.appendChild(createElement("h3", unstressedVowels.type));
     sectionLesson.appendChild(createElement("p", unstressedVowels.intro));
     Object.values(unstressedVowels.letters).forEach(el => createUnit(sectionLesson, el));
+    break;
+    case "Простое настоящее время":
+    sectionLesson.appendChild(createElement("h3", "Ps"));
+    lessonFirst.forEach(el => createLessonsOne(el));
     break;
     default:
 

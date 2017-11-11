@@ -1,4 +1,4 @@
-let unstressedVowels = {
+const unstressedVowels = {
   "type": "Чтение безударных гласных.",
   "intro": "В безударном положении гласные звуки произносятся не так, как в ударном. Они меняют свое качество и долготу.",
   "letters": {
@@ -56,6 +56,6 @@ let unstressedVowels = {
       ]
     }
   }
-}
+};
 
 Object.values(unstressedVowels.letters).forEach(el => console.log(el));

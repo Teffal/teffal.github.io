@@ -1,4 +1,4 @@
-let syllableFirst = {
+const syllableFirst = {
   "type": "Первый слог: [гласная + согласная] или [гласная + согласная + согласная].",
   "letters": {
     "a": {
@@ -73,6 +73,6 @@ let syllableFirst = {
       ]
     }
   }
-}
+};
 
 // Object.values(syllableFirst.letters).forEach(el => console.log(el));

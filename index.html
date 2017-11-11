@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang == "en-GB">
+<html lang = "en-GB">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <style>
-      textarea {width:100%}
-    </style>
-    <title>Rules of Read of English</title>
+    <title>English Book</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <!-- <link rel="stylesheet" href="css/styleTab.css"> -->
-    <!-- <link rel="stylesheet" href="css/styleDropdownButton.css"> -->
     <link rel="stylesheet" href="css/styleIndex.css">
     <!-- Yandex.Metrika counter -->
   	<script type="text/javascript">
@@ -47,46 +42,45 @@
     <header></header>
     <nav class="navbar">
       <a href="#home" class="tablink" onclick="getContent('Home', this, 'orange')" id="defaultOpen">Главная</a>
-      <a href="#lessons" class="tablink" onclick="getContent('Lessons', this, 'green')">Уроки</a>
+      <a href="#readWrite" class="tablink" onclick="getContent('Lessons', this, 'green', 'readWrite')">Чтение/Написание</a>
+      <a href="#lessons" class="tablink" onclick="getContent('Lessons', this, 'green', 'lessonsAll')">Уроки</a>
       <a href="#about" class="tablink" onclick="getContent('Settings', this, 'blue')">О сайте</a>
     </nav>
-      <section id="Home" class="tabcontent">
-        <h2>Это электронный интерактивный учебник по английскому языку.</h2>
-        <ol>
-         <li><u>Для работы звука, необходимо использовать браузер Google Chrome настольной версии.</u></li>
-         <li>Поля для ввода текста озвучиваются в соответствии с выбранным языком.</li>
-         <li>Озвучивание последнего слова происходит после нажатия клавиши пробел (после слова).</li>
-         <li>После знака окончания предложения (".", "!" или "?") озвучивается последнее предложение.</li>
-         <li>При необходимости ставьте запятые, они при озвучивании позволяют увеличить паузу в тех местах где она стоит при озвучивания всего предложения.</li>
-         <li>Заканчивайте каждое поле знаком окончания предложения (".", "!" или "?"), чтобы при озвучивании поля не озвучивались предыдущие поля.</li>
-         <li>Для перемещения к следующему полю достаточно нажать клавишу TAB->.</li>
-       </ol>
-      </section>
+    <section id="Home" class="tabcontent">
+      <h2>Это электронный интерактивный учебник по английскому языку.</h2>
+      <ol>
+       <li><u>Для работы звука, необходимо использовать браузер Google Chrome настольной версии.</u></li>
+       <li>Поля для ввода текста озвучиваются в соответствии с выбранным языком.</li>
+       <li>Озвучивание последнего слова происходит после нажатия клавиши пробел (после слова).</li>
+       <li>После знака окончания предложения (".", "!" или "?") озвучивается последнее предложение.</li>
+       <li>При необходимости ставьте запятые, они при озвучивании позволяют увеличить паузу в тех местах где она стоит при озвучивания всего предложения.</li>
+       <li>Заканчивайте каждое поле знаком окончания предложения (".", "!" или "?"), чтобы при озвучивании поля не озвучивались предыдущие поля.</li>
+       <li>Для перемещения к следующему полю достаточно нажать клавишу TAB->.</li>
+     </ol>
+    </section>
 
-      <section id="Lessons" class="tabcontent">
-        <aside>
-          <ul id="AddLesson">
-            <!-- <li><a class="active" href="#home">Home</a></li> -->
-          </ul>
-        </aside>
-        <section id="LessonContain" style="margin-left:25%; padding:1px 16px;height:1000px;"></section>
-      </section>
+    <section id="Lessons" class="tabcontent">
+      <aside>
+        <ul id="AddLesson">
+          <!-- <li><a class="active" href="#home">Home</a></li> -->
+        </ul>
+      </aside>
+      <section id="LessonContain" style="margin-left:25%; padding:1px 16px;height:1000px;"></section>
+    </section>
 
-      <section id="Settings" class="tabcontent">
-        <p>Измените голос и язык, используя раскрывающееся меню. Озвучивание последнено написанного слова происходит после пробела. Озвучивание предложение после нажатия: ".", "!" или "?".</p>
-        <div>
-          <select></select>
-        </div>
-        <div>
-          <label for="rate">Скорость речи - Speed speach: </label>
-          <label class="rate-value">1</label>
-          <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate"></br>
-          <label for="pitch">Тональность речи - Pitch speach: </label>
-          <label class="pitch-value">1</label>
-          <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
-        </div>
-      </section>
-    </nav>
+    <section id="Settings" class="tabcontent">
+      <p>Измените голос и язык, используя раскрывающееся меню. Озвучивание последнено написанного слова происходит после пробела. Озвучивание предложение после нажатия: ".", "!" или "?".</p>
+      <select></select>
+      <div>
+        <label for="rate">Скорость речи - Speed speach: </label>
+        <label class="rate-value">1</label>
+        <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+        </br>
+        <label for="pitch">Тональность речи - Pitch speach: </label>
+        <label class="pitch-value">1</label>
+        <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+      </div>
+    </section>
 
     <script src="data/rulesOfRead.js"></script>
     <script src="data/consonantLetters.js"></script>
@@ -97,9 +91,12 @@
     <script src="data/syllableFourth.js"></script>
     <script src="data/prefixes.js"></script>
     <script src="data/unstressedVowels.js"></script>
+    <script src="data/lessonsAll.js"></script>
 
     <script src="js/scriptContentGet.js"></script>
     <script src="js/scriptLessonGet.js"></script>
+    <script src="js/scriptLessonsBase.js"></script>
+
     <script src="js/scriptSpeechSynthesis.js"></script>
   </body>
 </html>

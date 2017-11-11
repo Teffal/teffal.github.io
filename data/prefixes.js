@@ -1,4 +1,4 @@
-let prefixes = {
+const prefixes = {
   "type": "Правильное ударение при чтении слов с приставкой.",
   "intro": "Приставки читается без ударения. Таким образом, если в предложении два слога, первый – приставка, значит, ударение падает на второй слог. Виды приставок: a-, ad-, be-, con-, de-, dis-, ex-, for-, il-, in-, ir-, oc-, per-, pre-, re-, se-, sub-, trans-",
   "letters": {
@@ -76,6 +76,6 @@ let prefixes = {
       ]
     }
   }
-}
+};
 
 // Object.values(combinationVowels.letters).forEach(el => console.log(el));

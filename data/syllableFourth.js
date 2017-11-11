@@ -1,4 +1,4 @@
-let syllableFourth = {
+const syllableFourth = {
   "type": "Четвертый слог: [гласной + re] и [гласная + r + гласная] три буквы читаются вместе.",
   "letters": {
     "are": {
@@ -69,6 +69,6 @@ let syllableFourth = {
       ]
     }
   }
-}
+};
 
 // Object.values(syllableFirst.letters).forEach(el => console.log(el));

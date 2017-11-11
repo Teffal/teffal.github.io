@@ -246,7 +246,7 @@ const rulesOfRead = {
     ],
     "dolu": "2017-11-02 03:31:42.292099"
   }
-}
+};
 
 // console.log(Object.values(rulesOfRead));
 // Object.values(rulesOfRead).forEach(el => console.log(el));

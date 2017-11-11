@@ -2,6 +2,11 @@ body {
   margin: 0;
 }
 
+/*with generated textarea*/
+textarea {
+    width:100%;
+}
+
 /* The navigation bar */
 .navbar {
    overflow: hidden;
