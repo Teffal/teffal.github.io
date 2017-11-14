@@ -1,42 +1,51 @@
 const lessonsAll = {
   "PSAffirmative": {
     "head": {},
-    "title": "Простое настоящее время",
-    "unit": "Presetn simple tens - простое настоящее время",
+    "title": "Простое настоящее время (утвердительные предложения)",
+    "unit": "Presetn simple tense - простое настоящее время, утвердительная форма.",
     "intro": "… По статистике, 300-400 самых употребительных слов охватывают 90% лексики, используемой в разговорной речи. Свобода в общении возникает не от знания огромного количества слов, а от умения составлять даже из небольшого числа элементов большое количество комбинаций...",
     "rule": "Утвердительные предложения в английском языке строятся по прямому порядку слов: подлежащее + глагол. Подлежащим может быть местоимение или сущетвительное.",
-    "words": [
-      {
-        "new": {
-          pronouns: ["I", "you", "we", "they"],
-          verbs: ["go", "run", "talk", "see", "sleep"]
-        }
+    "wordsNew": {
+      "pronouns": ["I", "you", "we", "they"],
+      "verbs": ['advise', 'answer', 'ask', 'believe', 'call', 'change', 'close', 'copy', 'excuse', 'finish', 'follow', 'happen', 'help', 'hope', 'like', 'listen', 'live', 'look', 'love', 'move', 'need', 'open', 'order', 'play', 'remember', 'start', 'stay', 'stop', 'study', 'thank', 'travel', 'try', 'use', 'wait', 'walk', 'want', 'work', 'worry']
       },
+    "exercises":
       {
-        "repeat": {
-          nouns: ["car", "cap", "cat"],
-          verbs: ["go", "run", "talk", "see", "sleep"],
-          adverbs: ["fast", "slow", "hard", "easy"],
-          adverbDefiniteTimes: ["today", "yesterday", "tomorrow"],
-          adverbIndefiniteTimes: ["always", "ever", "never", "often", "seldom", "just", "already"]
-        }
-      }
-    ],
-    "exercises": [
-      {
-        "write": "+e",
-        "ts": "s",
-        "exam": "cell, dance, face, fence, force, ice, juice, nice, ocean, once, pace, peace, piece, place, price, race, rice, sauce, scene, since, slice, space, trace, twice, voice"
+        "exFirst": {"tense": "PS", "typeSent": "affirmative sentence"}
       },
-      {
-        "write": "-e -i -y",
-        "ts": "k",
-        "exam": "act, cake, call, camp, can, cap, car, card, care, case, cash, cast, cat, club, clue, coal, coat, code, cold, come, cook, cool, cop, cope, copy, core, corn, cost, cow, crew, crop, cry, cup, cut, fact"
-      }
-    ],
     "dolu": "2017-11-02 03:31:42.292099"
-  }
+  },
+  "PSNegative": {
+    "head": {},
+    "title": "Простое настоящее время (отрицательные предложения)",
+    "unit": "Presetn simple tense - простое настоящее время, отричательня форма.",
+    "intro": "… По статистике, 300-400 самых употребительных слов охватывают 90% лексики, используемой в разговорной речи. Свобода в общении возникает не от знания огромного количества слов, а от умения составлять даже из небольшого числа элементов большое количество комбинаций...",
+    "rule": "Отрицательные предложения в английском языке строятся по прямому порядку слов с использованием вспомогательного глагола - do и частички отрицания - not: подлежащее + do not + глагол. Подлежащим может быть местоимение или сущетвительное.",
+    "wordsNew": {
+      "verbs": ['advise', 'answer', 'ask', 'believe', 'call', 'change', 'close', 'copy', 'excuse', 'finish', 'follow', 'happen', 'help', 'hope', 'like', 'listen', 'live', 'look', 'love', 'move', 'need', 'open', 'order', 'play', 'remember', 'start', 'stay', 'stop', 'study', 'thank', 'travel', 'try', 'use', 'wait', 'walk', 'want', 'work', 'worry']
+      },
+    "exercises":
+      {
+        "exFirst": {"tense": "PS", "typeSent": "affirmative sentence"}
+      },
+    "dolu": "2017-11-02 03:31:42.292099"
+  },
+  "PSQestionGeneral": {
+    "head": {},
+    "title": "Простое настоящее время (общий вопрос: да/нет)",
+    "unit": "Presetn simple tense - простое настоящее время, общий вопрос.",
+    "intro": "… По статистике, 300-400 самых употребительных слов охватывают 90% лексики, используемой в разговорной речи. Свобода в общении возникает не от знания огромного количества слов, а от умения составлять даже из небольшого числа элементов большое количество комбинаций...",
+    "rule": "Для образования вопросительной формы от всех глаголов в настоящем простом времени используется вспомогательный глагол (он не переводтиться) - do: Do + подлежащее + глагол. Подлежащим может быть местоимение или сущетвительное.",
+    "wordsNew": {
+      "verbs": ['advise', 'answer', 'ask', 'believe', 'call', 'change', 'close', 'copy', 'excuse', 'finish', 'follow', 'happen', 'help', 'hope', 'like', 'listen', 'live', 'look', 'love', 'move', 'need', 'open', 'order', 'play', 'remember', 'start', 'stay', 'stop', 'study', 'thank', 'travel', 'try', 'use', 'wait', 'walk', 'want', 'work', 'worry']
+      },
+    "exercises":
+      {
+        "exFirst": {"tense": "PS", "typeSent": "affirmative sentence"}
+      },
+    "dolu": "2017-11-02 03:31:42.292099"
+  },
 };
 
-// console.log(Object.keys(lessonsAll));
+// console.log(lessonsAll.PSAffirmative.wordsNew);
 // Object.values(rulesOfRead).forEach(el => console.log(el));

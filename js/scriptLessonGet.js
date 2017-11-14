@@ -38,7 +38,7 @@ function createRuleOfConsonants(letter) {
 
 // Add first lesson: Single sentences
 function createLessonsOne(sent) {
-  sectionLesson.appendChild(createElement("p", sent));
+  sectionLesson.appendChild(createElement("li", sent));
   sectionLesson.appendChild(createElement("textarea", ''));
 }
 
@@ -110,9 +110,23 @@ function getLessonContain(nameLesson, elment, color) {
     sectionLesson.appendChild(createElement("p", unstressedVowels.intro));
     Object.values(unstressedVowels.letters).forEach(el => createUnit(sectionLesson, el));
     break;
-    case "Простое настоящее время":
-    sectionLesson.appendChild(createElement("h3", "Ps"));
+    case "Простое настоящее время (утвердительные предложения)":
+    sectionLesson.appendChild(createElement("h3", lessonsAll.PSAffirmative.unit));
+    sectionLesson.appendChild(createElement("i", lessonsAll.PSAffirmative.intro));
+    sectionLesson.appendChild(createElement("p", lessonsAll.PSAffirmative.rule));
     lessonFirst.forEach(el => createLessonsOne(el));
+    break;
+    case "Простое настоящее время (отрицательные предложения)":
+    sectionLesson.appendChild(createElement("h3", lessonsAll.PSNegative.unit));
+    sectionLesson.appendChild(createElement("i", lessonsAll.PSNegative.intro));
+    sectionLesson.appendChild(createElement("p", lessonsAll.PSNegative.rule));
+    lessonSecond.forEach(el => createLessonsOne(el));
+    break;
+    case "Простое настоящее время (общий вопрос: да/нет)":
+    sectionLesson.appendChild(createElement("h3", lessonsAll.PSQestionGeneral.unit));
+    sectionLesson.appendChild(createElement("i", lessonsAll.PSQestionGeneral.intro));
+    sectionLesson.appendChild(createElement("p", lessonsAll.PSQestionGeneral.rule));
+    lessonThird.forEach(el => createLessonsOne(el));
     break;
     default:
 

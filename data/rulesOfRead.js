@@ -121,6 +121,32 @@ const rulesOfRead = {
     ],
     "dolu": "2017-11-02 03:31:42.292099"
   },
+  "ssion": {
+    "head": {},
+    "char": "ssion",
+    "vowel": false,
+    "def": [
+      {
+        "rule": "звучит как сочетание русских букв [шн]:",
+        "ts": "ʃən",
+        "exam": "emission, mission, passion, session"
+      }
+    ],
+    "dolu": "2017-11-02 03:31:42.292099"
+  },
+  "tion": {
+    "head": {},
+    "char": "tion",
+    "vowel": false,
+    "def": [
+      {
+        "rule": "звучит как сочетание русских букв [шн]:",
+        "ts": "ʃən",
+        "exam": "action, edition, emotion, fiction, mention, motion, nation, notion, option, portion, section, station"
+      }
+    ],
+    "dolu": "2017-11-02 03:31:42.292099"
+  },
   "th": {
     "head": {},
     "char": "th",
@@ -159,6 +185,32 @@ const rulesOfRead = {
         "ts": "f",
         "exam": "enough, laugh, rough, through, tough",
         "exce": "ghost"
+      }
+    ],
+    "dolu": "2017-11-02 03:31:42.292099"
+  },
+  "gn": {
+    "head": {},
+    "char": "gn",
+    "vowel": false,
+    "def": [
+      {
+        "rule": "звучит как русский звук [н], g не читается:",
+        "ts": "n",
+        "exam": "assign, campaign, design, foreign, sign"
+      }
+    ],
+    "dolu": "2017-11-02 03:31:42.292099"
+  },
+  "kn": {
+    "head": {},
+    "char": "kn",
+    "vowel": false,
+    "def": [
+      {
+        "rule": "если в начале слова, k не читается. Звучит как русский звук [н]:",
+        "ts": "n",
+        "exam": "knap, knit, knight, knee, knife, knock, know, knowledge, unknown"
       }
     ],
     "dolu": "2017-11-02 03:31:42.292099"
@@ -205,19 +257,6 @@ const rulesOfRead = {
         "rule": "w не читается, звучит как русский звук [р] (язык поднять к небу):",
         "ts": "r",
         "exam": "wrap, write, wreck, writer, writing, wrong"
-      }
-    ],
-    "dolu": "2017-11-02 03:31:42.292099"
-  },
-  "kn": {
-    "head": {},
-    "char": "kn",
-    "vowel": false,
-    "def": [
-      {
-        "rule": "если в начале слова, k не читается. Звучит как русский звук [н]:",
-        "ts": "n",
-        "exam": "acknowledge, darkness, knap, knit, knight, knee, knife, knock, know, knowledge, unknown"
       }
     ],
     "dolu": "2017-11-02 03:31:42.292099"
