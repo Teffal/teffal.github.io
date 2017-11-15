@@ -51,7 +51,7 @@ function createSentencesPS(tense, wordsBase, wordsNew, wordsRepeat){
       wordsNew.verbs.forEach(verb =>
         wordsBase.pronouns.forEach(pronoun => {
           do {
-              newSentence = `Do ${wordsBase.pronouns[Math.floor(Math.random() * wordsBase.pronouns.length)]} ${verb}.`;
+              newSentence = `Do ${wordsBase.pronouns[Math.floor(Math.random() * wordsBase.pronouns.length)]} ${verb}?`;
           }
           while (sentences.includes(newSentence)) // check for a coincide
           sentences.push(newSentence);
@@ -67,7 +67,5 @@ function createSentencesPS(tense, wordsBase, wordsNew, wordsRepeat){
   return sentences;
 }
 
-let lessonFirst = createSentencesPS("PSAffirmative", wordsSentence, lessonsAll.PSAffirmative.wordsNew);
-let lessonSecond = createSentencesPS("PSNegative", wordsSentence, lessonsAll.PSNegative.wordsNew);
-let lessonThird = createSentencesPS("PSQestionGeneral", wordsSentence, lessonsAll.PSQestionGeneral.wordsNew);
+// let lessonFirst = createSentencesPS("PSAffirmative", wordsSentence, lessonsAll.PSAffirmative.wordsNew);
 // lessonFirst.forEach(el => console.log(el));

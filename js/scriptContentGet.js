@@ -44,7 +44,7 @@ function getContent(content, elment, color, unit) {
       createElement("a", lesson.rus, function() {getLessonContain(lesson.eng, this, "lightgreen")})))); // add onclick function
     } else if (unit == "lessonsAll") {
       Object.values(lessonsAll).forEach(lesson => asideNav.appendChild(createElement("li",
-      createElement("a", lesson.title, function() {getLessonContain(lesson.title, this, "lightgreen")}))));
+      createElement("a", lesson.title, function() {getLessonContain(lesson.key, this, "lightgreen")}))));
     }
   // }
 }
