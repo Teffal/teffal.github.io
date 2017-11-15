@@ -112,7 +112,7 @@ function getLessonContain(nameLesson, elment, color) {
     break;
     default:
   }
-
+  // генерация заполняемых уроков
   if (nameLesson in lessonsAll){
     sectionLesson.appendChild(createElement("h3", lessonsAll[nameLesson].unit));
     sectionLesson.appendChild(createElement("i", lessonsAll[nameLesson].intro));

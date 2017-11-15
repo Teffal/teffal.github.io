@@ -11,60 +11,40 @@ const wordsSentence = {
 
 
 function createSentencesPS(tense, wordsBase, wordsNew, wordsRepeat){
-  let i = 1;
-  // wordsBase.nouns.forEach(noun =>
-  //   wordsBase.verbs.forEach(verb =>
-  //     wordsBase.adverbs.forEach(adverb =>
-  //       wordsBase.adverbIndefiniteTimes.forEach(adverbIndefiniteTime => console.log(`${i++}) ${noun} ${adverbIndefiniteTime} ${verb} ${adverb}.`)))));
-
-  const repeat = Array.apply(null, Array(2)).map((val, idx) => idx);
-  let newSentence, sentences = [];
-  switch (tense) {
-    case "PSAffirmative":
-    if (wordsNew.verbs) {
-      wordsNew.verbs.forEach(verb =>
-        wordsBase.pronouns.forEach(pronoun => {
-          do {
-              newSentence = `${wordsBase.pronouns[Math.floor(Math.random() * wordsBase.pronouns.length)]} ${verb}.`;
+  let newSentence, sentencesGroup = [], sentences = [];
+  if (wordsNew.verbs) {
+    wordsNew.verbs.forEach(verb => {
+      sentences = [];
+      if (verb in dictVerbRegular) {
+          dictVerbRegular[verb].def.forEach(el => {
+            if (el.tr[0].pos == "verb"){
+              sentences.push(`${verb} - ${el.tr[0].text}: `);
+            }
           }
-          while (sentences.includes(newSentence)) // check for a coincide
-          sentences.push(newSentence);
-        }
-      ));
-    }
-    break;
-    case "PSNegative":
-    if (wordsNew.verbs) {
-      wordsNew.verbs.forEach(verb =>
-        wordsBase.pronouns.forEach(pronoun => {
-          do {
-              newSentence = `${wordsBase.pronouns[Math.floor(Math.random() * wordsBase.pronouns.length)]} do not ${verb}.`;
+        );
+      }
+      wordsBase.pronouns.forEach(pronoun => {
+        do {
+          switch (tense) {
+              case "PSAffirmative":
+                newSentence = `${wordsBase.pronouns[Math.floor(Math.random() * wordsBase.pronouns.length)]} ${verb}.`;
+                break;
+              case "PSNegative":
+                newSentence = `${wordsBase.pronouns[Math.floor(Math.random() * wordsBase.pronouns.length)]} do not ${verb}.`;
+                break;
+              case "PSQestionGeneral":
+                newSentence = `Do ${wordsBase.pronouns[Math.floor(Math.random() * wordsBase.pronouns.length)]} ${verb}?`;
+                break;
+              default:
           }
-          while (sentences.includes(newSentence)) // check for a coincide
-          sentences.push(newSentence);
         }
-      ));
-    }
-    break;
-    case "PSQestionGeneral":
-    if (wordsNew.verbs) {
-      wordsNew.verbs.forEach(verb =>
-        wordsBase.pronouns.forEach(pronoun => {
-          do {
-              newSentence = `Do ${wordsBase.pronouns[Math.floor(Math.random() * wordsBase.pronouns.length)]} ${verb}?`;
-          }
-          while (sentences.includes(newSentence)) // check for a coincide
-          sentences.push(newSentence);
-        }
-      ));
-    }
-    break;
-    // case PSAffirmative:
-    //
-    // break;
-    default:
+        while (sentences.includes(newSentence)) // check for a coincide
+        sentences.push(newSentence);
+      })
+      sentencesGroup.push(sentences.join(" "));
+    });
   }
-  return sentences;
+  return sentencesGroup;
 }
 
 // let lessonFirst = createSentencesPS("PSAffirmative", wordsSentence, lessonsAll.PSAffirmative.wordsNew);
