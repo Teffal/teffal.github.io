@@ -30,15 +30,9 @@ function createElement(el, contain, myFunct){
   return elType;
 }
 
-// Add first lesson: Single letters
-function createRuleOfConsonants(letter) {
-  sectionLesson.appendChild(createElement("p", `Правило чтения буквы "${letter.toUpperCase()}" - звучит как русский звук [${consonantLetters[letter]}]. Напечатайте по несколько раз букву для прослушивания её алфавитного произношение, как ориентира для запоминания.`));
-  sectionLesson.appendChild(createElement("textarea", ''));
-}
-
-// Add first lesson: Single sentences
-function createLessonsOne(sent) {
-  sectionLesson.appendChild(createElement("li", sent));
+// Add single exercise
+function createExercise(tag, contain) {
+  sectionLesson.appendChild(createElement(tag, contain));
   sectionLesson.appendChild(createElement("textarea", ''));
 }
 
@@ -59,6 +53,7 @@ function createUnit(self, contain){
   }
 }
 
+
 function getLessonContain(nameLesson, elment, color) {
   let i, allLessons;
   // Remove the background color of all tablinks/buttons
@@ -74,7 +69,10 @@ function getLessonContain(nameLesson, elment, color) {
   switch (nameLesson) {
     case "Single letters": // Title need lesson
     sectionLesson.appendChild(createElement("h3", `Правило чтения согласных букв английского языка.`));
-    Object.keys(consonantLetters).forEach(el => createRuleOfConsonants(el));
+    Object.keys(consonantLetters).forEach(letter => createExercise("p", `Правило чтения буквы
+    "${letter.toUpperCase()}" - звучит как русский звук [${consonantLetters[letter]}].
+    Напечатайте по несколько раз букву для прослушивания её алфавитного произношение,
+    как ориентира для запоминания.`));
     break;
     case "Letters in words":
     Object.values(rulesOfRead).forEach(el => createUnit(sectionLesson, el));
@@ -117,6 +115,8 @@ function getLessonContain(nameLesson, elment, color) {
     sectionLesson.appendChild(createElement("h3", lessonsAll[nameLesson].unit));
     sectionLesson.appendChild(createElement("i", lessonsAll[nameLesson].intro));
     sectionLesson.appendChild(createElement("p", lessonsAll[nameLesson].rule));
-    createSentencesPS(nameLesson, wordsSentence, lessonsAll[nameLesson].wordsNew).forEach(el => createLessonsOne(el));
+    // lessonsAll[nameLesson].wordsNew.verbs.forEach(word => sectionLesson.appendChild(createElement("button", word)));
+    // createSentencesPS(nameLesson, wordsSentence, lessonsAll[nameLesson].wordsNew).forEach(el => createExercise("li", el));
+    getExercisesAll(lessonsAll[nameLesson]).forEach(exAll => exAll.forEach(el => createExercise("li", el)));
   }
 }
